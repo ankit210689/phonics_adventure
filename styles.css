@@ -1,0 +1,65 @@
+:root {
+  --ink: #14213d;
+  --muted: #65718a;
+  --paper: #fffdf7;
+  --cream: #fff5df;
+  --orange: #f77f4f;
+  --blue: #4e8edb;
+  --green: #56b68a;
+  --yellow: #f6ca59;
+  --line: #e9e5dc;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); background: #f4efe5; font-family: "Nunito", sans-serif; }
+button { font: inherit; cursor: pointer; }
+.page-shell { min-height: 100vh; background: radial-gradient(circle at 87% 12%, #ffe3a8 0, #ffe3a800 19rem), linear-gradient(135deg, #fffaf0 0%, #f8f5ec 58%, #eaf5ef 100%); }
+.topbar { height: 82px; padding: 0 clamp(20px, 6vw, 90px); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #ede8dc; background: #fffdf9cc; backdrop-filter: blur(10px); }
+.brand { color: var(--ink); text-decoration: none; display: flex; gap: 12px; align-items: center; font: 700 21px "Baloo 2", cursive; letter-spacing: .1px; }
+.brand strong { color: var(--orange); }
+.brand-mark { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 14px; color: white; background: var(--ink); font: 800 20px "Baloo 2", cursive; transform: rotate(-5deg); }
+.top-stats { display: flex; gap: 10px; align-items: center; }
+.stat-pill { border: 1px solid #eadfce; border-radius: 99px; padding: 9px 15px; background: #fff; color: var(--muted); font-size: 13px; font-weight: 800; }
+.stat-pill:first-child { color: #aa7510; background: #fff7d9; border-color: #f1dda1; }
+.stat-pill:first-child span { color: #e6ae25; font-size: 16px; }
+main { max-width: 970px; margin: 0 auto; padding: 54px 24px 32px; }
+.hero-row { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+.eyebrow, .section-kicker { margin: 0 0 8px; text-transform: uppercase; color: var(--orange); font-size: 12px; font-weight: 900; letter-spacing: 2px; }
+h1, h2, h3, p { margin-top: 0; }
+h1 { margin-bottom: 13px; font: 800 clamp(42px, 6vw, 68px)/.93 "Baloo 2", cursive; letter-spacing: -.5px; }
+h1 em { color: var(--blue); font-style: normal; }
+.hero-copy { max-width: 440px; color: var(--muted); font-size: 16px; line-height: 1.6; }
+.sunburst { flex: 0 0 158px; width: 158px; height: 158px; display: grid; place-items: center; border-radius: 49% 51% 48% 52%; background: #ffd66e; color: #a66b25; text-align: center; font: 800 24px/1 "Baloo 2", cursive; box-shadow: 0 0 0 13px #ffd66e44, 0 15px 25px #d39c3b22; transform: rotate(8deg); }
+.mode-tabs { display: flex; gap: 4px; margin-top: 43px; border-bottom: 1px solid var(--line); }
+.mode-tab { padding: 13px 22px 15px; color: var(--muted); border: 0; border-bottom: 3px solid transparent; background: transparent; font-weight: 900; }
+.mode-tab.active { color: var(--ink); border-color: var(--orange); }
+.tab-icon { display: inline-grid; place-items: center; width: 22px; height: 22px; margin-right: 5px; border-radius: 50%; color: var(--orange); background: #fff0df; }
+.lesson-panel, .quiz-panel { margin-top: 22px; padding: clamp(22px, 4vw, 40px); border: 1px solid #ebe5d9; border-radius: 24px; background: #fffdf9e8; box-shadow: 0 16px 40px #47556c0b; }
+.lesson-heading { display: flex; justify-content: space-between; align-items: end; gap: 20px; }
+.section-kicker { color: var(--muted); letter-spacing: 1px; }
+h2 { margin-bottom: 0; font: 800 29px "Baloo 2", cursive; }
+.progress-track { width: 210px; height: 9px; overflow: hidden; border-radius: 99px; background: #eee9dd; }
+.progress-track span { display: block; height: 100%; width: 3.85%; border-radius: inherit; background: var(--orange); transition: width .35s ease; }
+.letter-stage { display: flex; justify-content: center; align-items: center; gap: clamp(35px, 10vw, 125px); padding: 52px 0 28px; }
+.letter-pair { display: flex; align-items: end; font: 800 155px/.7 "Baloo 2", cursive; letter-spacing: -14px; }
+.uppercase-letter { color: var(--blue); }
+.lowercase-letter { color: var(--green); transform: translateY(25px); }
+.word-card { display: flex; align-items: center; gap: 14px; min-width: 200px; padding: 18px 22px; border-radius: 18px; background: var(--cream); }
+.letter-emoji { font-size: 52px; }
+.word-label { margin: 0 0 1px; color: var(--muted); font-size: 12px; font-weight: 800; }
+.word-card h3 { margin: 0; font: 800 22px "Baloo 2", cursive; }
+.sound-line { display: flex; justify-content: center; align-items: center; gap: 9px; color: var(--muted); font-size: 16px; }
+.sound-line strong { color: var(--ink); }
+.sound-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--yellow); }
+.action-row { display: flex; justify-content: center; gap: 12px; margin: 27px 0 35px; }
+.action-button, .next-button { border: 0; border-radius: 12px; color: white; font-weight: 900; box-shadow: 0 4px 0 #00000012; transition: transform .15s, filter .15s; }
+.action-button { padding: 13px 18px; }
+.action-button:hover, .next-button:hover { transform: translateY(-2px); filter: brightness(1.04); }
+.orange { background: var(--orange); }.blue { background: var(--blue); }.green { background: var(--green); }
+.button-icon { margin-right: 6px; }
+.navigation-row { display: flex; align-items: center; justify-content: space-between; }
+.text-button { border: 0; background: transparent; color: var(--muted); font-weight: 800; }.text-button:disabled { opacity: .35; cursor: not-allowed; }
+.next-button { padding: 13px 19px; background: var(--ink); }.next-button span { margin-left: 12px; color: var(--yellow); }
+.quiz-heading { display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 13px; font-weight: 800; }.quiz-badge { padding: 7px 11px; border-radius: 99px; color: #936713; background: #fff4c7; font-size: 11px; letter-spacing: 1px; }.quiz-panel h2 { text-align: center; margin-top: 30px; }.quiz-letter { display: flex; justify-content: center; align-items: baseline; gap: 14px; margin: 20px 0 5px; }.quiz-letter span:first-child { color: var(--blue); font: 800 105px/.9 "Baloo 2", cursive; }.quiz-letter span:last-child { color: var(--orange); font-weight: 900; }.quiz-prompt { text-align: center; color: var(--muted); }.choice-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 680px; margin: 28px auto 18px; }.choice-button { padding: 20px 12px; border: 2px solid #e5e0d6; border-radius: 14px; color: var(--ink); background: white; font: 800 18px "Baloo 2", cursive; transition: .15s; }.choice-button:hover { border-color: var(--blue); transform: translateY(-2px); }.choice-button.correct { color: #237a53; border-color: var(--green); background: #e4f7ec; }.choice-button.wrong { color: #b65043; border-color: #e7a39a; background: #fff0ed; }.quiz-feedback { min-height: 24px; text-align: center; color: var(--green); font-weight: 900; }.quiz-panel > .next-button { display: block; margin: 10px auto 0; }.hidden { display: none !important; }
+footer { display: flex; justify-content: center; gap: 14px; padding: 25px; color: #99a0ad; font-size: 12px; font-weight: 800; }
+@media (max-width: 640px) { .topbar { height: 70px; padding: 0 17px; }.brand { font-size: 17px; gap: 8px; }.brand-mark { width: 35px; height: 35px; font-size: 17px; }.progress-stat { display: none; } main { padding: 35px 15px 20px; }.hero-row { align-items: start; }.sunburst { flex-basis: 78px; width: 78px; height: 78px; font-size: 13px; box-shadow: 0 0 0 7px #ffd66e44; }.hero-copy { font-size: 14px; }.mode-tabs { margin-top: 28px; }.lesson-panel, .quiz-panel { padding: 20px 17px; border-radius: 18px; }.lesson-heading { align-items: start; flex-direction: column; }.progress-track { width: 100%; }.letter-stage { gap: 12px; padding: 45px 0 25px; }.letter-pair { font-size: 105px; letter-spacing: -9px; }.lowercase-letter { transform: translateY(17px); }.word-card { min-width: 0; padding: 12px; gap: 8px; }.letter-emoji { font-size: 37px; }.word-card h3 { font-size: 17px; }.action-row { flex-wrap: wrap; margin-bottom: 27px; }.action-button { flex: 1 1 30%; padding: 11px 6px; font-size: 13px; }.choice-list { grid-template-columns: 1fr; }.choice-button { padding: 15px; }.quiz-heading p { margin: 0; } }

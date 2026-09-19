@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#14213d" />
+    <meta name="description" content="A playful phonics adventure for learning letters and sounds." />
+    <title>Phonics Adventure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#learn" aria-label="Phonics Adventure home">
+          <span class="brand-mark">Aa</span>
+          <span>Phonics <strong>Adventure</strong></span>
+        </a>
+        <div class="top-stats" aria-label="Your progress">
+          <span class="stat-pill"><span aria-hidden="true">★</span> <b id="star-count">0</b> stars</span>
+          <span class="stat-pill progress-stat"><span id="progress-label">1 / 26</span></span>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero-row">
+          <div>
+            <p class="eyebrow">Welcome, explorer</p>
+            <h1>Learn your letters.<br /><em>Find your voice.</em></h1>
+            <p class="hero-copy">Follow the trail from A to Z, listen to each sound, and collect stars along the way.</p>
+          </div>
+          <div class="sunburst" aria-hidden="true"><span>LET'S<br />GO!</span></div>
+        </section>
+
+        <nav class="mode-tabs" aria-label="Learning mode">
+          <button class="mode-tab active" data-mode="learn"><span class="tab-icon">✦</span> Learn</button>
+          <button class="mode-tab" data-mode="quiz"><span class="tab-icon">?</span> Quiz</button>
+        </nav>
+
+        <section id="learn-panel" class="lesson-panel" aria-labelledby="lesson-title">
+          <div class="lesson-heading">
+            <div>
+              <p class="section-kicker">Letter <span id="letter-number">01</span> of 26</p>
+              <h2 id="lesson-title">Meet the letter!</h2>
+            </div>
+            <div class="progress-track" aria-label="Alphabet progress"><span id="progress-bar"></span></div>
+          </div>
+
+          <div class="letter-stage">
+            <div class="letter-pair" aria-live="polite">
+              <span id="uppercase-letter" class="uppercase-letter">A</span>
+              <span id="lowercase-letter" class="lowercase-letter">a</span>
+            </div>
+            <div class="word-card">
+              <span id="letter-emoji" class="letter-emoji" aria-hidden="true">🍎</span>
+              <div><p class="word-label">A is for</p><h3 id="word-name">APPLE</h3></div>
+            </div>
+          </div>
+
+          <div class="sound-line"><span class="sound-dot"></span><span>Sound:</span> <strong id="phonics-sound">short a</strong> <span class="sound-dot"></span></div>
+
+          <div class="action-row">
+            <button id="say-letter" class="action-button orange"><span class="button-icon">🔊</span> Say it</button>
+            <button id="say-sound" class="action-button blue"><span class="button-icon">◉</span> Hear sound</button>
+            <button id="say-word" class="action-button green"><span class="button-icon">♪</span> Say word</button>
+          </div>
+          <div class="navigation-row">
+            <button id="previous-letter" class="text-button" type="button">← Back</button>
+            <button id="next-letter" class="next-button" type="button">Next letter <span>→</span></button>
+          </div>
+        </section>
+
+        <section id="quiz-panel" class="quiz-panel hidden" aria-labelledby="quiz-title">
+          <div class="quiz-heading"><span class="quiz-badge">★ QUIZ TIME</span><p id="quiz-progress">Question 1 of 26</p></div>
+          <h2 id="quiz-title">Which word starts with this sound?</h2>
+          <div class="quiz-letter" aria-live="polite"><span id="quiz-letter">A</span><span id="quiz-phonetic">/short a/</span></div>
+          <p class="quiz-prompt">Tap the word that matches the picture and sound.</p>
+          <div id="choice-list" class="choice-list"></div>
+          <p id="quiz-feedback" class="quiz-feedback" aria-live="polite"></p>
+          <button id="next-question" class="next-button hidden" type="button">Next question <span>→</span></button>
+        </section>
+      </main>
+      <footer><span>Made for curious minds</span><span>✦</span><span>Learn a little every day</span></footer>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
