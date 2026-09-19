@@ -12,8 +12,8 @@ function speak(text) {
   if (!("speechSynthesis" in window)) return;
   window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
-  utterance.rate = 0.82;
-  utterance.pitch = 1.08;
+  utterance.rate = 0.68;
+  utterance.pitch = 1.0;
   window.speechSynthesis.speak(utterance);
 }
 
@@ -68,7 +68,13 @@ document.querySelectorAll(".mode-tab").forEach((tab) => tab.addEventListener("cl
 $("previous-letter").addEventListener("click", () => { if (currentIndex > 0) { currentIndex -= 1; renderLesson(); } });
 $("next-letter").addEventListener("click", () => { currentIndex = (currentIndex + 1) % letters.length; renderLesson(); });
 $("say-letter").addEventListener("click", () => { const l = letters[currentIndex]; speak(`Letter ${l.uppercase}. Capital ${l.uppercase}. Small ${l.lowercase}. The sound is ${l.sound}. ${l.uppercase} is for ${l.word}.`); });
-$("say-sound").addEventListener("click", () => { const l = letters[currentIndex]; speak(`${l.uppercase} says ${l.sound}`); });
+$("say-sound").addEventListener("click", () => {
+  const l = letters[currentIndex];
+  const soundText = l.uppercase === "A"
+    ? "A sounds like Aaeh"
+    : `${l.uppercase} sounds like ${l.sound}`;
+  speak(soundText);
+});
 $("say-word").addEventListener("click", () => speak(letters[currentIndex].word));
 $("next-question").addEventListener("click", () => { quizIndex = (quizIndex + 1) % letters.length; renderQuiz(); });
 renderLesson();

@@ -22,7 +22,7 @@ clock = pygame.time.Clock()
 
 def speak(text):
     engine = pyttsx3.init()
-    engine.setProperty("rate", 105)
+    engine.setProperty("rate", 35)
     engine.say(text)
     engine.runAndWait()
     engine.stop()
@@ -99,7 +99,11 @@ def speak_letter():
 
 def speak_sound():
     letter = current_letter()
-    speak(f"{letter['uppercase']} says {letter['sound']}")
+
+    if letter["uppercase"] == "A":
+        speak("A sounds like Aaeh")
+    else:
+        speak(f"{letter['uppercase']} sounds like {letter['sound']}")
 
 
 def speak_word():
