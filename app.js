@@ -22,6 +22,7 @@ function renderLesson() {
   $("uppercase-letter").textContent = letter.uppercase;
   $("lowercase-letter").textContent = letter.lowercase;
   $("letter-emoji").textContent = letter.emoji;
+  $("word-label").textContent = `${letter.uppercase} is for`;
   $("word-name").textContent = letter.word;
   $("phonics-sound").textContent = letter.phonics;
   $("letter-number").textContent = String(currentIndex + 1).padStart(2, "0");
