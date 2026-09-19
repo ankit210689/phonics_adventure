@@ -12,8 +12,9 @@ function speak(text) {
   if (!("speechSynthesis" in window)) return;
   window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
-  utterance.rate = 0.68;
-  utterance.pitch = 1.0;
+  utterance.rate = 0.38;
+  utterance.pitch = 0.9;
+  utterance.volume = 1;
   window.speechSynthesis.speak(utterance);
 }
 
@@ -71,8 +72,8 @@ $("say-letter").addEventListener("click", () => { const l = letters[currentIndex
 $("say-sound").addEventListener("click", () => {
   const l = letters[currentIndex];
   const soundText = l.uppercase === "A"
-    ? "A sounds like Aaeh"
-    : `${l.uppercase} sounds like ${l.sound}`;
+    ? "A... pause... sounds like... Aaeh"
+    : `${l.uppercase}... pause... sounds like... ${l.sound}`;
   speak(soundText);
 });
 $("say-word").addEventListener("click", () => speak(letters[currentIndex].word));
