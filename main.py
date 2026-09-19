@@ -140,6 +140,19 @@ def draw_button(rect, text, color):
     screen.blit(text_surface, text_rect)
 
 
+def draw_creator_credit():
+    credit = small_font.render(
+        "Created by Ankit Pandey | GitHub: ankit210689",
+        True,
+        BLACK
+    )
+
+    screen.blit(
+        credit,
+        credit.get_rect(center=(WIDTH // 2, HEIGHT - 18))
+    )
+
+
 # ==========================================
 # LEARNING SCREEN
 # ==========================================
@@ -263,6 +276,7 @@ def draw_learning_screen():
     draw_button(sound_button, "Sound", YELLOW)
     draw_button(word_button, "Word", ORANGE)
     draw_button(next_button, "Next", NEXT_GREEN)
+    draw_creator_credit()
 
     return (
         back_button,
@@ -365,6 +379,8 @@ def draw_quiz_screen():
             feedback_text.get_rect(center=(WIDTH // 2, 650))
         )
 
+    draw_creator_credit()
+
 
 # ==========================================
 # COMPLETION SCREEN
@@ -413,6 +429,7 @@ def draw_complete_screen():
         "Play Again",
         YELLOW
     )
+    draw_creator_credit()
 
     return play_button
 
